@@ -14,12 +14,10 @@ import com.bumptech.glide.request.RequestOptions
  * @description:
  * @email: hujw_android@163.com
  */
-class ImageHolder(context: Context, itemView: View?) : Holder<String>(itemView) {
+class ImageHolder(itemView: View?) : Holder<String>(itemView) {
     private lateinit var mImageView: AppCompatImageView
 
-    private var context = context
-
-
+    //private var context = context
 
     companion object {
         private val BANNER_POSITIONS =
@@ -29,12 +27,12 @@ class ImageHolder(context: Context, itemView: View?) : Holder<String>(itemView) 
     }
 
 
-    override fun initView(itemView: View?) {
-        mImageView = AppCompatImageView(context)
+    override fun initView(itemView: View) {
+        mImageView = AppCompatImageView(itemView.context)
     }
 
     override fun updateUI(data: String?) {
-        Glide.with(context).apply { BANNER_POSITIONS }.load(data).into(mImageView)
+        Glide.with(itemView.context).load(data).apply(BANNER_POSITIONS).into(mImageView)
     }
 
 

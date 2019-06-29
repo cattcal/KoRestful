@@ -17,12 +17,11 @@ object BannerCreator {
      * 创建默认风格的轮播
      */
     fun setDefault(
-        context: Context,
         convertBanner: ConvenientBanner<String>,
         banners: ArrayList<String>,
         clickListener: OnItemClickListener
     ) {
-        convertBanner.setPages(HolderCreator(context), banners)
+        convertBanner.setPages(HolderCreator(), banners)
             .setPageIndicator(intArrayOf(R.drawable.dot_normal, R.drawable.dot_focus))
             .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.CENTER_HORIZONTAL)
             .setPointViewVisible(true)

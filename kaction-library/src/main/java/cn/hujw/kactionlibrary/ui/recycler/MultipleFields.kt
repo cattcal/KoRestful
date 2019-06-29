@@ -3,7 +3,7 @@ package cn.hujw.kactionlibrary.ui.recycler
 /**
  * @author: hujw
  * @date: 2019/6/29
- * @description:
+ * @description: 数据加载解析的字段
  * @email: hujw_android@163.com
  */
 enum class MultipleFields {

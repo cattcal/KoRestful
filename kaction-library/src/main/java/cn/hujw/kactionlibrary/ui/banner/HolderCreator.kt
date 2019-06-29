@@ -1,10 +1,8 @@
 package cn.hujw.kactionlibrary.ui.banner
 
-import android.content.Context
 import android.view.View
 import cn.hujw.kactionlibrary.R
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator
-import com.bigkoo.convenientbanner.holder.Holder
 
 /**
  * @author: hujw
@@ -12,18 +10,14 @@ import com.bigkoo.convenientbanner.holder.Holder
  * @description:
  * @email: hujw_android@163.com
  */
-class HolderCreator(context: Context) : CBViewHolderCreator {
+class HolderCreator : CBViewHolderCreator {
 
-
-    private var context = context
-
-
-    override fun createHolder(itemView: View?): Holder<*> {
-        return ImageHolder(context, itemView)
+    override fun createHolder(itemView: View?): ImageHolder {
+        return ImageHolder(itemView)
     }
 
     override fun getLayoutId(): Int {
-        return R.layout.banner_item_layout
+        return R.layout.item_multiple_banner
     }
 
 }

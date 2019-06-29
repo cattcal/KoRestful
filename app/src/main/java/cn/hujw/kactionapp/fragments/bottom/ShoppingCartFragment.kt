@@ -19,31 +19,14 @@ import com.blankj.utilcode.util.ToastUtils
  */
 class ShoppingCartFragment : BottomItemFragment() {
 
-    private lateinit var convenientBanner: ConvenientBanner<String>
-
-    private lateinit var arrayList: ArrayList<String>
-
     override fun setLayout(): Any {
 
         return R.layout.fragment_shopping_cart
     }
 
     override fun onBindView(saveInstanceState: Bundle?, rootView: View?) {
-        addData()
-        BannerCreator.setDefault(
-            rootView!!.context,
-            convenientBanner,
-            arrayList,
-            OnItemClickListener {
-                ToastUtils.showShort("点击了不知道第几个")
-            })
+
     }
 
 
-    private fun addData() {
-        arrayList = ArrayList()
-        arrayList.add("http://img2.imgtn.bdimg.com/it/u=1447362014,2103397884&fm=200&gp=0.jpg");
-        arrayList.add("http://img1.imgtn.bdimg.com/it/u=111342610,3492888501&fm=26&gp=0.jpg");
-        arrayList.add("http://imgsrc.baidu.com/imgad/pic/item/77094b36acaf2eddc8c37dc7861001e9390193e9.jpg");
-    }
 }
