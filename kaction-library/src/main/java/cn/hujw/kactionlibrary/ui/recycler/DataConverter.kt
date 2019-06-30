@@ -5,7 +5,7 @@ import java.lang.NullPointerException
 /**
  * @author: hujw
  * @date: 2019/6/30
- * @description: 数据转换曾
+ * @description: 数据转换层
  * @email: hujw_android@163.com
  */
 abstract class DataConverter {
