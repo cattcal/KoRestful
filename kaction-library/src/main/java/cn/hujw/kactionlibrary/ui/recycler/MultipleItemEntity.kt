@@ -18,8 +18,8 @@ class MultipleItemEntity internal constructor(fields: LinkedHashMap<Any, Any>) :
     }
 
     companion object {
-        fun builder(): MutipleEntityBuilder {
-            return MutipleEntityBuilder()
+        fun builder(): MultipleEntityBuilder {
+            return MultipleEntityBuilder()
         }
     }
 

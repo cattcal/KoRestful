@@ -18,7 +18,7 @@ class HomeDataConverter : DataConverter() {
         val size = dataArray.size
         for (i in 0 until size) {
             val data = dataArray.getJSONObject(i)
-            val imageUrl = data.getString("image_url")
+            val imageUrl = data.getString("imageUrl")
             val text = data.getString("text")
             val spanSize = data.getInteger("spanSize")
             val id = data.getBigInteger("goodsId")

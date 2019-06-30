@@ -109,6 +109,5 @@ open class MultipleRecyclerAdapter constructor(data: List<MultipleItemEntity>) :
 
     //轮播的点击事件
     override fun onItemClick(position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

@@ -6,7 +6,7 @@ package cn.hujw.kactionlibrary.ui.recycler
  * @description:
  * @email: hujw_android@163.com
  */
-class MutipleEntityBuilder {
+class MultipleEntityBuilder {
 
     companion object {
         private val FIELDS = LinkedHashMap<Any, Any>()
@@ -17,18 +17,18 @@ class MutipleEntityBuilder {
         FIELDS.clear()
     }
 
-    fun setItemType(itemType: Int): MutipleEntityBuilder {
+    fun setItemType(itemType: Int): MultipleEntityBuilder {
         FIELDS[MultipleFields.ITEM_TYPE] = itemType
         return this
     }
 
-    fun setField(key: Any, value: Any?): MutipleEntityBuilder {
+    fun setField(key: Any, value: Any?): MultipleEntityBuilder {
         if (value != null)
             FIELDS[key] = value
         return this
     }
 
-    fun setField(map: LinkedHashMap<*, *>): MutipleEntityBuilder {
+    fun setFields(map: LinkedHashMap<*, *>): MultipleEntityBuilder {
         FIELDS.putAll(map)
         return this
     }
