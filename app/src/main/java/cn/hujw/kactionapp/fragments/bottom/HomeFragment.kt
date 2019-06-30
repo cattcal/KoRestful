@@ -4,8 +4,8 @@ import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.Toolbar
 import android.view.View
-import android.widget.Toast
 import cn.hujw.kactionapp.R
 import cn.hujw.kactionlibrary.fragments.bottom.BottomItemFragment
 import cn.hujw.kactionlibrary.net.RestClient
@@ -30,6 +30,13 @@ class HomeFragment : BottomItemFragment() {
 
     override fun onBindView(saveInstanceState: Bundle?, rootView: View?) {
         mRecyclerView = findView(R.id.rv_home)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //ToolBar 初始状态图 透明
+        val toolBar = view.findViewById<Toolbar>(R.id.tb_home)
+        toolBar.background.alpha = 0
     }
 
     //懒加载数据和UI

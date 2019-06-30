@@ -5,13 +5,12 @@ import android.view.View
 import android.widget.ImageView
 import cn.hujw.kactionlibrary.R
 import cn.hujw.kactionlibrary.ui.banner.BannerCreator
-import com.bigkoo.convenientbanner.ConvenientBanner
-import com.bigkoo.convenientbanner.listener.OnItemClickListener
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter
 import com.chad.library.adapter.base.BaseQuickAdapter
+import com.youth.banner.Banner
 
 /**
  * @author: hujw
@@ -20,8 +19,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter
  * @email: hujw_android@163.com
  */
 open class MultipleRecyclerAdapter constructor(data: List<MultipleItemEntity>) :
-    BaseMultiItemQuickAdapter<MultipleItemEntity, MultipleViewHolder>(data), BaseQuickAdapter.SpanSizeLookup,
-    OnItemClickListener {
+    BaseMultiItemQuickAdapter<MultipleItemEntity, MultipleViewHolder>(data), BaseQuickAdapter.SpanSizeLookup{
 
     //确保Banner初始化一次
     private var mIsInitBanner = false
@@ -90,9 +88,9 @@ open class MultipleRecyclerAdapter constructor(data: List<MultipleItemEntity>) :
 
             ItemType.BANNER -> if (!mIsInitBanner) {
                 bannerImages = entity.getField(MultipleFields.BANNERS)
-                val convenientBanner = holder.getView<ConvenientBanner<String>>(R.id.banner_recycler_item)
+                val banner = holder.getView<Banner>(R.id.banner_recycler_item)
                 //设置默认的Banner
-                BannerCreator.setDefault(convenientBanner, bannerImages, this)
+                BannerCreator.setDefault(banner, bannerImages)
                 mIsInitBanner = true
             }
 
@@ -107,7 +105,5 @@ open class MultipleRecyclerAdapter constructor(data: List<MultipleItemEntity>) :
         return data[position].getField(MultipleFields.SPAN_SIZE)
     }
 
-    //轮播的点击事件
-    override fun onItemClick(position: Int) {
-    }
+
 }

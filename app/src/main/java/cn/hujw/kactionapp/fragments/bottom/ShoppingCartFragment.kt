@@ -7,8 +7,6 @@ import cn.hujw.kactionapp.R
 import cn.hujw.kactionlibrary.fragments.KActionFragment
 import cn.hujw.kactionlibrary.fragments.bottom.BottomItemFragment
 import cn.hujw.kactionlibrary.ui.banner.BannerCreator
-import com.bigkoo.convenientbanner.ConvenientBanner
-import com.bigkoo.convenientbanner.listener.OnItemClickListener
 import com.blankj.utilcode.util.ToastUtils
 
 /**
